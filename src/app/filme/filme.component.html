@@ -1,0 +1,21 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="form-group">
+      <label for="">Nome</label>
+      <input class="form-control" formControlName="nome" type="text" name="nome" id="">
+    </div>
+  <span *ngIf="form.controls['nome'].errors && form.controls['nome'].touched">
+    campo requerido
+  </span>
+    <div class="form-group">
+        <label for="">ano</label>
+        <input class="form-control" formControlName="ano" type="text" name="ano" id="">
+    </div>
+    <div class="form-group">
+      <label><input class="form-control" value="sim" type="radio" formControlName="lancado" name="lancado" id="">Sim</label><br>
+      <label><input class="form-control" value="nao" type="radio" formControlName="lancado" name="lancado" id="">Não</label><br>
+    </div>
+
+    <button type="submit" [disabled]="!form.valid" class="btn btn-default">Add</button>
+  </form>
+</div>
